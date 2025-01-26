@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float inputH;
-    [SerializeField] float speed;
-    [SerializeField] float jumpForce;
+    float inputH; //Teclas do Player
+    [SerializeField] float speed; // Velocida...
+    [SerializeField] float jumpForce; // Altura do Pulo...
 
-    [SerializeField] bool onGrouded;
+    bool onGrouded; //Player no Chão
 
     Rigidbody2D rb;
+    Animator anim;
     [SerializeField] SpriteRenderer sprRender;
 
     //Outras coisas que provavelmente não fica aqui
@@ -18,21 +19,22 @@ public class Player : MonoBehaviour
     {
         onGrouded = true;
         rb = GetComponent<Rigidbody2D>();
-        //sprRender = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         inputH = Input.GetAxisRaw("Horizontal");
         bool inputJump = Input.GetKeyDown(KeyCode.Space);
-        //print(Input.GetKeyDown(KeyCode.Escape));
         
+        //Player chamando pulo E esta no chão
         if (inputJump && onGrouded)
         {
             Jump();
             onGrouded = false;
         }
 
+        //Trocar lado do Sprite do Player de acordo com a direção...
         switch (inputH)
         {
             case 1: sprRender.flipX = false; break;
@@ -58,23 +60,27 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-
+        //Se o Player tocar no Chão
         if (coll.gameObject.CompareTag("floor"))
         {
-            onGrouded = true;
+            onGrouded = true; //Esta no Chão
         }
+        //Se o Jogador tocar em uma Bolha
         if (coll.gameObject.CompareTag("bubble"))
         {
-            //float posX = coll.gameObject.GetComponent<Transform>().position.x;
+            //... E a bolha estiver a direita
             if(coll.gameObject.GetComponent<Transform>().position.x > 0)
             {
+                //Trocar Pos. da Bolha (vai para o lado esquerdo)
                 coll.gameObject.GetComponent<Transform>().position = new Vector2(-6f, -3.5f);
-                sprCity.sprite = cityOff;
+                sprCity.sprite = cityOff; //Fundo cidade cinza
             }
+            //... E a Bolha estiver a esquerda
             else
             {
+                //Trocar Pos. da Bolha (vai para o lado esquerdo)
                 coll.gameObject.GetComponent<Transform>().position = new Vector2(6f, -3.5f);
-                sprCity.sprite = cityOn;
+                sprCity.sprite = cityOn; //Fundo cidade colorida
 
             }
 

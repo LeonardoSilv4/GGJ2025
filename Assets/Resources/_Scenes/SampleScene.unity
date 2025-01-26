@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 1343266125}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -791,7 +791,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpForce: 20
-  onGrouded: 0
   sprRender: {fileID: 1180909612}
   sprCity: {fileID: 2146339964}
   cityOn: {fileID: 5006817205297558212, guid: 4bc746ddbf80259488680e225d8aac26, type: 3}
