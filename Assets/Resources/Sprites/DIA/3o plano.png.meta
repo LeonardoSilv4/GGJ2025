@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 1fd3addc783307f44baf15467b6e64c3
+guid: 7b01d7e59b2ea144bb5f63926d321da7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6014117963090536052
-    second: floorCity_0
+      213: 1818990815149717042
+    second: 3o plano_0
+  - first:
+      213: 300019402570183657
+    second: 3o plano_1
+  - first:
+      213: -5323930152992817426
+    second: 3o plano_2
+  - first:
+      213: 6561468810019322278
+    second: 3o plano_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: floorCity_0
+      name: 3o plano_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1275
-        height: 72
+        x: 279
+        y: 102
+        width: 132
+        height: 374
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 476ae4b5c60767350800000000000000
-      internalID: 6014117963090536052
+      spriteID: 23672ba428a5e3910800000000000000
+      internalID: 1818990815149717042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3o plano_1
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 57
+        width: 76
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3bbeb9e02e92400800000000000000
+      internalID: 300019402570183657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3o plano_2
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 44
+        width: 138
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee3fd5bbb99d16b0800000000000000
+      internalID: -5323930152992817426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3o plano_3
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 85
+        width: 95
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9b10a5e150f0b50800000000000000
+      internalID: 6561468810019322278
       vertices: []
       indices: 
       edges: []
@@ -147,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      floorCity_0: 6014117963090536052
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

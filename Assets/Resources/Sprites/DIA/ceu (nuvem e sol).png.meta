@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1fd3addc783307f44baf15467b6e64c3
+guid: 5e43ed2cac903224fbb59b7f8f7aac7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6014117963090536052
-    second: floorCity_0
+      213: 1797782451942944841
+    second: ceu (nuvem e sol)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: floorCity_0
+      name: ceu (nuvem e sol)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1275
-        height: 72
+        width: 1381
+        height: 598
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 476ae4b5c60767350800000000000000
-      internalID: 6014117963090536052
+      spriteID: 9407d7f6d9103f810800000000000000
+      internalID: 1797782451942944841
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      floorCity_0: 6014117963090536052
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

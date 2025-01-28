@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      abubble_0: 833045983740954613
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
