@@ -6,11 +6,17 @@ TagManager:
   tags:
   - floor
   - bubble
+  - BuRender
+  - ObjsDia
+  - ObjsNoite
+  - plataformMove
+  - PlataforDia
+  - PlataforNoite
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
