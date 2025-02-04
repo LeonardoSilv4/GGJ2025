@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56c8d27193fd4de4c844023830bafdd8
+guid: 09ecab77199665a47b1862a02256e112
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8682580295325499400
-    second: 2 paralaz  2 plano_0
+      213: -7472134275414604681
+    second: fantasma_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2 paralaz  2 plano_0
+      name: fantasma_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8047
-        height: 1978
+        width: 904
+        height: 980
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ff31534937418780800000000000000
-      internalID: -8682580295325499400
+      spriteID: 77444ef2775ad4890800000000000000
+      internalID: -7472134275414604681
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2 paralaz  2 plano_0: -8682580295325499400
+      fantasma_0: -7472134275414604681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

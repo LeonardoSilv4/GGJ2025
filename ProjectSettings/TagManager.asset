@@ -12,6 +12,9 @@ TagManager:
   - plataformMove
   - PlataforDia
   - PlataforNoite
+  - JumpTrig
+  - LiberFan
+  - FansTag
   layers:
   - Default
   - TransparentFX

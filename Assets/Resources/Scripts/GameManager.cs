@@ -8,12 +8,15 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject fanstamaObj;
+
     [SerializeField] AudioClip bubblePowClip,jumpClip;
     private AudioSource bubbleSource;
     [SerializeField] AudioSource playerSource;
 
     [SerializeField] bool diaBool = false;
     [SerializeField]  List<SpriteRenderer> bolhasRender = new List<SpriteRenderer>();
+    [SerializeField] Sprite bolhaDia, BolhaNoite;
 
     [SerializeField] List<SpriteRenderer> allSpriteDia,allSpriteNoite;
     [SerializeField] List<GameObject> allPlataforDia,allPlataforNoite;
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
     float randoPitch;
 
     [SerializeField] TMP_Text contador;
+    [SerializeField] TMP_Text FimG;
     private float tContador;
     bool canRunTime;
 
@@ -73,6 +77,13 @@ public class GameManager : MonoBehaviour
             if (sprsNoite != null)
             {
                 sprsNoite.enabled = false;
+            }
+        }
+        foreach (SpriteRenderer bolhaRender in bolhasRender)
+        {
+            if (bolhaRender != null)
+            {
+                bolhaRender.sprite = BolhaNoite;
             }
         }
 
@@ -152,6 +163,14 @@ public class GameManager : MonoBehaviour
                     sprsNoite.enabled = true;
                 }
             }
+
+            foreach (SpriteRenderer bolhaRender in bolhasRender)
+            {
+                if (bolhaRender != null)
+                {
+                    bolhaRender.sprite = bolhaDia;
+                }
+            }
         }
         else if(!diaBool) //Se é Noite = Ser Dia
         {
@@ -169,6 +188,13 @@ public class GameManager : MonoBehaviour
                 if (sprsNoite != null)
                 {
                     sprsNoite.enabled = false;
+                }
+            }
+            foreach (SpriteRenderer bolhaRender in bolhasRender)
+            {
+                if (bolhaRender != null)
+                {
+                    bolhaRender.sprite = BolhaNoite;
                 }
             }
         }
@@ -204,8 +230,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator PequenoAtraso()
+    public void LiberarFantasma()
     {
-        yield return new WaitForSeconds(1);
+        fanstamaObj.gameObject.SetActive(true);
+    }
+
+    public void finalGame()
+    {
+        FimG.enabled = true;
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -23,9 +24,12 @@ public class Player : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] SpriteRenderer sprRender;
 
+    bool canControll;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        canControll = true;
     }
 
     void Update()
@@ -34,28 +38,31 @@ public class Player : MonoBehaviour
         {
             gManager.GameOver();
         }
-
-
-        // Movimentação horizontal
-        moveInput = Input.GetAxisRaw("Horizontal");
-        if (moveInput == 1) sprRender.flipX = false; //Virar sprite do player para direita
-        if (moveInput == -1) sprRender.flipX = true; //... esquerda
-
-        if (moveInput != 0 && isGrounded) anim.SetBool("Running", true);
-        else anim.SetBool("Running", false);
-
-        // Verificar se está no chão
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if (isGrounded) anim.SetBool("Jumping", false);
-        if (!isGrounded) anim.SetBool("Jumping", true); //Se NÃO esta no chão, animação de Pulando
-
-        // Se teclar pula for chamada e Player esta no chão
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (canControll)
         {
-            transform.SetParent(null);
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); //Pular :)
-            gManager.JumpSound();
+            // Movimentação horizontal
+            moveInput = Input.GetAxisRaw("Horizontal");
+            if (moveInput == 1) sprRender.flipX = false; //Virar sprite do player para direita
+            if (moveInput == -1) sprRender.flipX = true; //... esquerda
+
+            if (moveInput != 0 && isGrounded) anim.SetBool("Running", true);
+            else anim.SetBool("Running", false);
+
+            // Verificar se está no chão
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            if (isGrounded) anim.SetBool("Jumping", false);
+            if (!isGrounded) anim.SetBool("Jumping", true); //Se NÃO esta no chão, animação de Pulando
+
+            // Se teclar pula for chamada e Player esta no chão
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                transform.SetParent(null);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); //Pular :)
+                gManager.JumpSound();
+            }
         }
+        if (transform.position.y < -12f) gManager.GameOver();
+
     }
     private void FixedUpdate()
     {
@@ -69,6 +76,9 @@ public class Player : MonoBehaviour
             gManager.BubblePow();
             Destroy(coll.gameObject); //Destruir Bolha
         }
+
+        if (coll.CompareTag("LiberFan")) gManager.LiberarFantasma();
+        if (coll.gameObject.name == "GameFinal") gManager.finalGame();
     }
     private void OnDrawGizmosSelected()
     {
@@ -86,5 +96,21 @@ public class Player : MonoBehaviour
         {
             transform.SetParent(colll.gameObject.transform);
         }
+
+        if (colll.gameObject.CompareTag("FansTag"))
+        {
+            canControll = false;
+            anim.SetTrigger("GoodBye");
+            rb.bodyType = RigidbodyType2D.Static;
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            StartCoroutine(AtrasoReset());
+        }
+
+    }
+
+    IEnumerator AtrasoReset()
+    {
+        yield return new WaitForSeconds(2f);
+        gManager.GameOver();
     }
 }
